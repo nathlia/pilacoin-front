@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #191923">
+    <div class="container">
+        <a routerLinkActive="active" routerLink="/dashboard" class="navbar-brand">PILACOIN</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse " id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <a routerLinkActive="active" *ngIf="logged == true" routerLink="dashboard" class="nav-link">Dashboard</a>
+                <a routerLink="/login" *ngIf="logged == false" class="nav-link">Login</a>
+                <a (click)="logout()" *ngIf="logged == true" class="nav-link">Log Out</a>
+            </ul>
+        </div>
+        <span class="navbar-text" *ngIf="logged == true">
+            {{user.username}}
+          </span>
+    </div>
+</nav>
+<div id="navbar_line"></div>

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="black">
+        <div class="login-box">
+            <div class="md-6">
+                <!-- <h3>Don't have an account? <a id="register" [routerLink]="['/register']">Create Account</a></h3> -->
+            </div>
+
+            <div class="line"></div>
+
+            <div class="login-form">
+                <h3>Log In</h3>
+                <form [formGroup]="formLogin" (ngSubmit)="login()">
+                    <div class="md-3">
+                        <label for="username" class="form-label">Username:</label>
+                        <input formControlName="username" type="text" class="form-control" id="username" name="username" required>
+                    </div>
+
+                    <div class="md-3">
+                        <label for="password" class="form-label">Password:</label>
+                        <input formControlName="password" type="password" class="form-control" id="password" name="password" required>
+                    </div>
+
+                    <div class="row">
+                        <div class="md-8"></div>
+                        <div class="md-4">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

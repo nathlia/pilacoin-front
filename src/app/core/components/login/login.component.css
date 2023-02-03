@@ -1,0 +1,53 @@
+.login-box {
+    width: 768px;
+    background-color: #1f1d29;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 2%;
+    position: relative;
+    left: 284px;
+    top: 97px;
+}
+
+.row {
+    justify-content: space-between;
+}
+
+#register:hover {
+    color: #7700ff;
+}
+
+#register {
+    background-color: #1f1d29;
+}
+
+.line {
+    height: 2px;
+    background: rgba(157, 122, 255, 0.33);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #b473ff;
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 509px;
+}
+
+.md-4 {
+    padding: 21px;
+}
+
+.black {
+    background: #121212;
+    position: absolute;
+    height: 825px;
+    width: 1380px;
+    top: 84px;
+    right: 239px;
+}
