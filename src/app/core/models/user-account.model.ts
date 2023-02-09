@@ -1,9 +1,9 @@
 export class UserAccount {    
-    username?: string;
-    password?: string;
-    confirmPassword?: string;
-    token?: string;
-    is_admin?: boolean;
+    username?: any;
+    password?: any;
+    confirmPassword?: any;
+    token?: any;
+    is_admin?: any;
 
     constructor( username?: string, password?: string, token?: string, is_admin?: boolean) {
         this.username = username;

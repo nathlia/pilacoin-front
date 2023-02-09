@@ -1,0 +1,46 @@
+#item {
+    width: 150px;
+    margin: 18px;
+    position: relative;
+    background: #27263A;
+    border-radius: 12px;
+    border: 1px solid transparent;
+}
+
+#item:hover {
+    border-color: #ae5eff;
+}
+
+.card {
+    position: relative;
+    height: 175px;
+    background: #27263A;
+    border-radius: 12px;
+    padding-top: 1px;
+    text-align: center;
+}
+
+.card-text {
+    position: relative;
+    bottom: 10px;
+}
+
+#character-card-name {
+    position: relative;
+    height: 39px;
+    text-align: center;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background: rgba(255, 191, 27, 0.74);
+}
+
+#character-card-img {
+    height: auto;
+}
+
+a,
+a:hover,
+a:visited {
+    text-decoration: none;
+    color: #FFFFFF;
+}

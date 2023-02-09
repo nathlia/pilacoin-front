@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
+import Swal from 'sweetalert2';
 import { UserAccount } from '../models/user-account.model';
 
 //const baseUrl = "http://localhost:8080/login"
@@ -20,7 +21,19 @@ export class LoginService {
     ) { }
 
     login(credentials: { password: any, username: any }): Observable<UserAccount> {
-      return this.http.post<UserAccount>(this.API_URL+'authenticate', credentials);
+      return this.http.post<UserAccount>(this.API_URL+'authenticate', credentials).pipe(
+        tap(autenticado => {
+          if (LoginService.checkLogged(autenticado)) {
+            sessionStorage.setItem(this.LOGGED_USER, JSON.stringify(autenticado));
+            this.router.navigate(['/dashboard']);
+          } else {
+            Swal.fire('Not Authorized', '', 'error');
+          }
+    }));;
+    }
+
+    private static checkLogged(u: UserAccount): u is UserAccount {
+      return (u as UserAccount).token !== undefined;
     }
 
   // login(userAccount: UserAccount): Observable<UserAccount> {
@@ -37,6 +50,11 @@ export class LoginService {
   }
 
   getLoggedUser(): UserAccount {    
-    return JSON.parse(<string> sessionStorage.getItem(this.LOGGED_USER));   
+    const loggedUserString = sessionStorage.getItem(this.LOGGED_USER);
+    if (loggedUserString) {
+      return JSON.parse(loggedUserString);
+    } else {
+      return null;
+    }
   }
 }

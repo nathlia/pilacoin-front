@@ -1,1 +1,31 @@
-<p>dashboard works!</p>
+<!-- Dashboard -->
+<div class="container-fluid my-5">
+    <div class="row">
+        <!-- Carteira Card -->
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-header text-center">
+                    <i class="fas fa-wallet"></i>Carteira
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Acompanhe sua carteira de Pilacoins</p>
+                </div>
+                <div class="card-footer">
+                    <a [routerLink]="['/carteira']" class="btn btn-primary btn-block">Acessar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Eventos Card -->
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-header text-center">Eventos</div>
+                <div class="card-body">
+                    <p class="card-text">Acompanhe todos os eventos da rede Pilacoin</p>
+                </div>
+                <div class="card-footer">
+                    <a [routerLink]="['/eventos']" class="btn btn-primary btn-block">Acessar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
