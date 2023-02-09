@@ -17,7 +17,7 @@ import { JwtinterceptorService } from '../core/services/jwtinterceptor.service';
   declarations: [
     DashboardComponent,
     CarteiraComponent,
-    EventosComponent
+    EventosComponent,
   ],
   imports: [
     RouterModule,
