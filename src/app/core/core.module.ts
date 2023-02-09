@@ -8,6 +8,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtinterceptorService } from './services/jwtinterceptor.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { LoginComponent } from './components/login/login.component';
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
+    RouterModule,
 
     AppRoutingModule
   ],

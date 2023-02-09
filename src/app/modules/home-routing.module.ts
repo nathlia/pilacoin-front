@@ -12,6 +12,24 @@ const routes: Routes = [
         (m) => m.DashboardModule
       ),
   },
+  {
+    path: 'carteira',
+    canLoad:[AuthGuardService],
+    canActivate:[AuthGuardService],
+    loadChildren: () =>
+      import('./components/carteira/carteira.module').then(
+        (m) => m.CarteiraModule
+      ),
+  },
+  {
+    path: 'eventos',
+    canLoad:[AuthGuardService],
+    canActivate:[AuthGuardService],
+    loadChildren: () =>
+      import('./components/eventos/eventos.module').then(
+        (m) => m.EventosModule
+      ),
+  },
 ];
 
 @NgModule({

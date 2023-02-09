@@ -11,6 +11,7 @@ import { AuthGuardService } from './core/services/auth-guard.service';
 import { ErrorhandlerService } from './core/services/errorhandler.service';
 import { JwtinterceptorService } from './core/services/jwtinterceptor.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeModule } from './modules/home.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
-    // HomeModule,
+    HomeModule,
 
     RouterModule,
     AppRoutingModule,

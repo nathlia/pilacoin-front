@@ -6,7 +6,9 @@
           </button>
         <div class="collapse navbar-collapse " id="navbarText">
             <ul class="navbar-nav mr-auto">
-                <a routerLinkActive="active" *ngIf="logged == true" routerLink="dashboard" class="nav-link">Dashboard</a>
+                <a routerLinkActive="active" routerLink="dashboard" class="nav-link">Dashboard</a>
+                <a routerLink="eventos" class="nav-link">Eventos</a>
+                <a *ngIf="logged == true" routerLink="carteira" class="nav-link">Carteira</a>
                 <a routerLink="/login" *ngIf="logged == false" class="nav-link">Login</a>
                 <a (click)="logout()" *ngIf="logged == true" class="nav-link">Log Out</a>
             </ul>

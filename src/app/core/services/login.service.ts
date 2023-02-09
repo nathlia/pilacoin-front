@@ -19,9 +19,8 @@ export class LoginService {
     private router: Router
     ) { }
 
-    login(email:string, password: string): Observable<UserAccount> {
-      const credenciais = {email: email, password: password};
-      return this.http.post<UserAccount>(this.API_URL+'authenticate', credenciais)
+    login(credentials: { password: any, username: any }): Observable<UserAccount> {
+      return this.http.post<UserAccount>(this.API_URL+'authenticate', credentials);
     }
 
   // login(userAccount: UserAccount): Observable<UserAccount> {

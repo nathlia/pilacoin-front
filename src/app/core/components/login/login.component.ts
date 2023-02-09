@@ -30,15 +30,12 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.formLogin.valid) {
-      let username : any;
-      let password : any;  
-      
-      if (username && password) {
-        username = this.formLogin.value.username;
-        password = this.formLogin.value.password;     
-      }              
-      
-      this.loginService.login(username, password).subscribe(
+      const credentials = {
+        password: this.formLogin.value.password,
+        username: this.formLogin.value.username
+      };
+  
+      this.loginService.login(credentials).subscribe(
         next => {
           this.loginService.setLoggedUser(next)
           const Toast = Swal.mixin({
@@ -53,8 +50,7 @@ export class LoginComponent implements OnInit {
               toast.addEventListener('mouseenter', Swal.stopTimer)
               toast.addEventListener('mouseleave', Swal.resumeTimer)
             }
-          })
-          
+          })          
           Toast.fire({
             icon: 'success',
             title: 'Signed in successfully'

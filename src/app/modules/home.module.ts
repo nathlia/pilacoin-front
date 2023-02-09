@@ -1,19 +1,39 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CarteiraComponent } from './components/carteira/carteira.component';
+import { EventosComponent } from './components/eventos/eventos.component';
+import { RouterModule } from '@angular/router';
+import { CoreModule } from '../core/core.module';
+import { AuthGuardService } from '../core/services/auth-guard.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ErrorhandlerService } from '../core/services/errorhandler.service';
+import { JwtinterceptorService } from '../core/services/jwtinterceptor.service';
 
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    CarteiraComponent,
+    EventosComponent
   ],
   imports: [
+    RouterModule,
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    CoreModule
+  ],
+  exports: [
+    DashboardComponent,
+    CarteiraComponent,
+    EventosComponent
+  ],
+  providers: [
+    AuthGuardService,
+    {provide: ErrorHandler, useClass: ErrorhandlerService},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtinterceptorService, multi: true}
   ]
 })
 export class HomeModule { }

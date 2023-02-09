@@ -30,7 +30,7 @@ export class AuthGuardService implements CanLoad, CanActivate {
     } 
     else {
       if (url == 'login') {
-        this.router.navigate(['home']);
+        this.router.navigate(['/dashboard']);
       }
     }
 
@@ -52,7 +52,7 @@ export class AuthGuardService implements CanLoad, CanActivate {
     } 
     else {
       if (state.url.endsWith('login')) {
-        this.router.navigate(['home']);
+        this.router.navigate(['/dashboard']);
       }
     }
 
