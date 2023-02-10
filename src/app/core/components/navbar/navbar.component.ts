@@ -31,9 +31,9 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {    
     if (this.user != null) {
-      this.logged = true; 
-        
+      this.logged = true;         
     }   
+    console.log(this.url)
   }
 
   logout() {

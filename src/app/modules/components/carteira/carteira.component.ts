@@ -32,9 +32,9 @@ export class CarteiraComponent implements OnInit {
     this.getPilaCoins();
     setInterval(() => {
       if (this.minerando) {
-         this.refreshPilaCoins();
+         this.refreshPilaCoinsConstantly();
       }     
-    }, 30000);
+    }, 1000);
   }
 
   getPilaCoins(): void {
@@ -47,6 +47,12 @@ export class CarteiraComponent implements OnInit {
       },
       error: (e) => console.error(e)
     });
+  }
+
+  refreshPilaCoinsConstantly() {
+    this.pilacoins = null;
+    this.getPilaCoins();
+    console.log(this.pilacoinCount);
   }
 
   refreshPilaCoins() {

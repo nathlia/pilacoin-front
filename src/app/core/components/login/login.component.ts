@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
             showConfirmButton: false,
             color: 'var(--background)',
             background: 'var(--primary)',
-            timer: 3000,
+            timer: 5000,
             timerProgressBar: true,
             didOpen: (toast) => {
               toast.addEventListener('mouseenter', Swal.stopTimer)

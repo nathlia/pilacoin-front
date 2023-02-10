@@ -48,10 +48,12 @@ export class ErrorhandlerService implements ErrorHandler {
           })    
           break;   
         case 401:
-          alert('Session expired')
-          this.zone.run(() => {
-            this.loginService.logout();
-          })          
+          Swal.fire({
+            title: 'Oops...',
+            text: 'Wrong Username or Password!',    
+            color: 'var(--primary)',
+            background: 'var(--main)',           
+          })    
           break;      
         case 403:
           alert('Access denied!')

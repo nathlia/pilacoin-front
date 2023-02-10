@@ -64,10 +64,7 @@ export class LoginService {
 
   logout(): void {
     sessionStorage.removeItem(this.LOGGED_USER);
-    this.router.navigate(['/login']);
   }
-
-  
 
   getLoggedUser(): UserAccount {    
     const loggedUserString = sessionStorage.getItem(this.LOGGED_USER);
