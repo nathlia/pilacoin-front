@@ -1,21 +1,42 @@
 <div class="container-fluid">
-    <h1>Carteira</h1>
-    <div class="d-flex justify-content-between align-items-center">
-        <h2>Meus Pilacoins</h2>
-        <button (click)="minerar()" class="btn btn-primary">
-        <i class="fas fa-sync-alt"></i>
-        {{ mineracaoButtonText }}
-      </button>
+
+    <div class="d-flex justify-content-between ">
+        <div class="d-flex">
+            <img src="../../../../assets/img/star.png" width="64" height="64" />
+            <div style="padding-left: 20px;">
+                <h1>Carteira</h1>
+                <h2 class="sub">Meus Pilacoins</h2>
+            </div>
+        </div>
+
+        <div class="pilacoin-count-card">
+            <div class="total">total</div>
+            <h2 class="pilacoin-count">{{pilacoinCount}}</h2>
+        </div>
+        <div class="d-flex " style="max-height: 36px;">
+            <button (click)="minerar()" class="btn btn-primary">
+                {{ mineracaoButtonText }}
+            </button> &nbsp;&nbsp;&nbsp;
+            <button (click)="refreshPilaCoins()" class="btn btn-primary">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+        </div>
     </div>
+    <div class="d-flex justify-content-between " style="flex-direction: row-reverse;">
+        <pagination-controls (pageChange)=" paginationConfig.currentPage = $event" [id]="paginationId"></pagination-controls>
+    </div>
+
     <div class="row">
-        <div class="col-md-4" *ngFor="let pilaCoin of pilacoins">
+        <div class="col-md-4" *ngFor="let pilaCoin of pilacoins | paginate: paginationConfig">
             <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title">Nonce: {{ pilaCoin.nonce }}</h5>
-                    <div class="card-text">ID Criador: {{ pilaCoin.idCriador }}</div>
-                    <div class="card-text">Chave Criador: {{ pilaCoin.chaveCriador }}</div>
-                    <div class="card-text">Data Criacao: {{ pilaCoin.dataCriacao }}</div>
-                    <div class="card-text">Status: {{ pilaCoin.status }}</div>
+                <div class="card-header">
+                    <img src="../../../../assets/img/star.png" width="20" height="20" /> Nonce: {{ pilaCoin.nonce }}
+                </div>
+                <div class="list-group list-group-flush">
+                    <h5 class="list-group-item">ID Criador: {{ pilaCoin.idCriador }}</h5>
+                    <h5 class="list-group-item overflow">Chave Criador: {{ pilaCoin.chaveCriador }}</h5>
+                    <h5 class="list-group-item">Data Criacao: {{ pilaCoin.dataCriacao }}</h5>
+                    <h5 class="list-group-item">Status: {{ pilaCoin.status }}</h5>
                 </div>
             </div>
         </div>

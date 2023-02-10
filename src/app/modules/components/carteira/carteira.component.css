@@ -1,0 +1,41 @@
+.pagination {
+    position: relative;
+    float: right;
+}
+
+.sub {
+    color: var(--primary);
+    font-weight: 100;
+}
+
+.pilacoin-count {
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 58px;
+    color: #9A85BF;
+    text-shadow: 0px 4px 4px rgba(87, 30, 248, 0.53);
+}
+
+.total {
+    font-weight: 275;
+    font-size: 16px;
+    line-height: 19px;
+    color: #75F3F3;
+    text-transform: uppercase;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+.d-flex {
+    display: flex !important;
+    justify-content: flex-start;
+    align-content: space-between;
+    align-items: center;
+}
+
+.list-group-item.overflow {
+    height: 56px;
+    overflow: scroll;
+}

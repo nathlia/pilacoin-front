@@ -26,5 +26,6 @@ export class PilacoinService {
   validarCoin(): Observable<any> {
     return this.http.get(`${baseUrl}/pilacoin/validaPilaOutroUsuario`);
   }
+
   
 }

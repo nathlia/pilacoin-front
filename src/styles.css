@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -23,7 +24,7 @@
 /* Track */
 
  ::-webkit-scrollbar-track {
-    background: #27263a;
+    background: var(--sub);
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
 }
@@ -46,45 +47,58 @@
     border-bottom-right-radius: 16px;
 }
 
-:root {
+
+/* :root {
     --background: #121212;
     --main: #191923;
     --primary: #9075f3;
     --sub: #27263a;
     --text_sub: rgba(255, 255, 255, 0.57);
-    --accent: ##7700ff;
+    --accent: #7700ff;
     --text: #d9d9d9
+} */
+
+:root {
+    --background: #000000;
+    --main: #060708;
+    --primary: #75f3f3;
+    --primary-lighter: #aef7ff;
+    --sub: #0f0f1aa3;
+    --text_sub: rgba(255, 255, 255, 0.57);
+    --accent: #7700ff;
+    --accent-lighter: #7436dd;
+    --text: #9986b9;
 }
 
 body {
     /* font-family: "Merriweather", serif; */
-    font-family: 'ja-jp', sans-serif;
+    font-family: 'Barlow', 'ja-jp', sans-serif;
     /* font-weight: 900; */
     text-align: left;
     margin: 0;
     font-size: 115%;
-    background: #121212;
+    background: var(--background);
     overflow-wrap: anywhere;
-    color: #d9d9d9;
+    color: var(--text);
 }
 
 h1 {
-    font-weight: 900;
+    font-weight: 600;
     font-size: 32px;
 }
 
 h2 {
-    font-weight: 900;
+    font-weight: 600;
     font-size: 24px;
 }
 
 h3 {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 18.72px;
 }
 
 h4 {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 16px;
 }
 
@@ -94,7 +108,7 @@ h5 {
 }
 
 h6 {
-    font-weight: 900;
+    font-weight: 400;
     font-size: 10.72px;
 }
 
@@ -103,7 +117,7 @@ h2,
 h4,
 h5,
 h6 {
-    font-family: "Merriweather", serif;
+    font-family: "Barlow", serif;
 }
 
 p {
@@ -118,7 +132,7 @@ a {
 }
 
 #main.container {
-    background: #191923;
+    background: var(--main);
     min-height: 775px;
     margin-top: 2%;
     border-radius: 14px;
@@ -137,8 +151,8 @@ a {
 .form-control,
 .list-group-item,
 .page-link {
-    background-color: #27263A;
-    color: rgba(255, 255, 255, 0.57);
+    background-color: var(--sub);
+    color: var(--text_sub);
     border: 0;
 }
 
@@ -152,43 +166,37 @@ a {
     background-color: #232231;
 }
 
-input {
-    font-family: inherit;
-    font-size: inherit;
-    border-radius: 10px;
-}
-
 input:focus {
-    background-color: #27263A;
-    color: rgba(255, 255, 255, 0.57);
+    background-color: var(--sub);
+    color: var(--text_sub);
 }
 
 textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 2px #7700ff;
-    background-color: #27263A;
-    color: rgba(255, 255, 255, 0.57);
+    box-shadow: 0 0 0 2px var(--accent);
+    background-color: var(--sub);
+    color: var(--text_sub);
 }
 
 .form-select {
-    background: #27263A;
+    background: var(--sub);
     padding: 10px;
     margin: 10px;
-    color: rgba(255, 255, 255, 0.57);
+    color: var(--text_sub);
     border: 0;
     border-radius: 6px;
 }
 
 select:focus {
-    box-shadow: 0 0 0 2px #7700ff;
+    box-shadow: 0 0 0 2px var(--accent);
 }
 
 input[type=text],
 input[type=number],
 input[type=password],
 input[type=textarea] {
-    background-color: #27263A;
-    color: rgba(255, 255, 255, 0.57);
+    background-color: var(--sub);
+    color: var(--text_sub);
     border: 0;
     border-radius: 6px;
 }
@@ -197,8 +205,8 @@ input[type=text]:active,
 input[type=number]:active,
 input[type=password]:active,
 input[type=textarea]:active {
-    background-color: #27263A;
-    color: rgba(255, 255, 255, 0.57);
+    background-color: var(--sub);
+    color: var(--text_sub);
     border: 0;
 }
 
@@ -207,16 +215,16 @@ input[type=number]:focus,
 input[type=password]:focus,
 input[type=textarea]:focus {
     outline: none;
-    box-shadow: 0 0 0 2px #7700ff;
-    background-color: #27263A;
-    color: rgba(255, 255, 255, 0.57);
+    box-shadow: 0 0 0 2px var(--accent);
+    background-color: var(--sub);
+    color: var(--text_sub);
 }
 
 input:-internal-autofill-selected {
     appearance: menulist-button;
     background-image: none !important;
-    background-color: -internal-light-dark(rgba(255, 255, 255, 0.57), #7700ff) !important;
-    color: -internal-light-dark(rgba(255, 255, 255, 0.57), #27263A) !important;
+    background-color: -internal-light-dark(var(--text_sub), var(--accent)) !important;
+    color: -internal-light-dark(var(--text_sub), var(--sub)) !important;
 }
 
 
@@ -231,25 +239,26 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    border: 1px solid #7700ff;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0.57);
-    -webkit-box-shadow: 0 0 0px 1000px #27263A inset;
-    box-shadow: 0 0 0px 1000px #27263A inset;
+    border: 1px solid var(--accent);
+    -webkit-text-fill-color: var(--text_sub);
+    -webkit-box-shadow: 0 0 0px 1000px var(--sub) inset;
+    box-shadow: 0 0 0px 1000px var(--sub) inset;
     transition: background-color 5000s ease-in-out 0s;
 }
 
 .form-control:valid {
-    background-color: #27263A!important;
+    background-color: var(--sub)!important;
 }
 
 
 /* custom primary buttons */
 
 .btn-primary {
-    color: #f0f0f0;
-    font-weight: 900;
-    background-color: #9D75F3;
-    border-color: #9075f3;
+    color: var(--primary-lighter) !important;
+    font-weight: 400 !important;
+    text-transform: uppercase;
+    background-color: var(--accent-lighter);
+    border-color: var(--primary);
     border-radius: 23px;
     padding: 2px;
     padding-left: 20px;
@@ -261,21 +270,21 @@ select:-webkit-autofill:focus {
 }
 
 .btn-primary:hover {
-    color: #212529;
-    background-color: #9075f3;
-    border-color: #7700ff;
+    color: #212529 !important;
+    background-color: var(--primary);
+    border-color: var(--accent);
 }
 
 .btn-primary:focus,
 .btn-primary.focus {
-    box-shadow: 0 0 0 .1rem #7700ff
+    box-shadow: 0 0 0 .1rem var(--accent)
 }
 
 .btn-primary.disabled,
 .btn-primary:disabled {
     color: #212529;
     background-color: #cebaf9;
-    border-color: #9075f3
+    border-color: var(--primary)
 }
 
 .btn-primary:not(:disabled):not(.disabled):active,
@@ -283,7 +292,7 @@ select:-webkit-autofill:focus {
 .show>.btn-primary.dropdown-toggle {
     color: #212529;
     background-color: #cebaf9;
-    border-color: #9075f3
+    border-color: var(--primary)
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus,
@@ -293,16 +302,16 @@ select:-webkit-autofill:focus {
 }
 
 .btn-outline-primary {
-    color: #9075f3;
+    color: var(--primary);
     background-color: transparent;
     background-image: none;
-    border-color: #9075f3
+    border-color: var(--primary)
 }
 
 .btn-outline-primary:hover {
     color: #222;
-    background-color: #7700ff;
-    border-color: #9075f3
+    background-color: var(--accent);
+    border-color: var(--primary)
 }
 
 .btn-outline-primary:focus,
@@ -315,7 +324,7 @@ select:-webkit-autofill:focus {
 .show>.btn-outline-primary.dropdown-toggle {
     color: #212529;
     background-color: #cebaf9;
-    border-color: #9075f3
+    border-color: var(--primary)
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
@@ -333,14 +342,65 @@ select:-webkit-autofill:focus {
 
 .card {
     position: relative;
-    height: 175px;
-    background: #27263A;
+    background: var(--sub);
     border-radius: 12px;
     padding-top: 1px;
-    text-align: center;
 }
 
 .card-text {
     position: relative;
     bottom: 10px;
+}
+
+.ngx-pagination li {
+    display: inline-block;
+    background-color: #25254a42;
+    border-radius: 1px;
+    position: relative;
+    /* float: right; */
+    top: 34px;
+    font-size: 14px;
+}
+
+.ngx-pagination .current {
+    background: var(--primary) !important;
+    color: var(--accent) !important;
+    border-radius: 26px !important;
+    padding-left: 13px !important;
+    padding-right: 13px !important;
+}
+
+.ngx-pagination a:hover,
+.ngx-pagination button:hover {
+    background: var(--accent) !important;
+    color: var(--primary)!important;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+.ngx-pagination a,
+.ngx-pagination button {
+    cursor: pointer;
+}
+
+.ngx-pagination a:hover,
+.ngx-pagination button:hover {
+    background: var(--sub);
+}
+
+.ngx-pagination a,
+.ngx-pagination button {
+    color: var(--primary) !important;
+    display: block;
+    padding: 0.1875rem 4px;
+    border-radius: 0;
+    text-decoration: none;
+}
+
+.swal2-icon.swal2-success [class^=swal2-success-line] {
+    background-color: #ff61ce !important;
+}
+
+.swal2-icon.swal2-success .swal2-success-ring {
+    border: 0.25em solid rgb(255 147 247 / 30%) !important;
 }

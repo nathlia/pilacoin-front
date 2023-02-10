@@ -11,6 +11,8 @@ import { AuthGuardService } from '../core/services/auth-guard.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorhandlerService } from '../core/services/errorhandler.service';
 import { JwtinterceptorService } from '../core/services/jwtinterceptor.service';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { JwtinterceptorService } from '../core/services/jwtinterceptor.service';
     RouterModule,
     CommonModule,
     HomeRoutingModule,
-    CoreModule
+    CoreModule,
+    NgxPaginationModule,
+    NgbModule
   ],
   exports: [
     DashboardComponent,

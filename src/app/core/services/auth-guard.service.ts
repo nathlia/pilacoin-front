@@ -23,7 +23,7 @@ export class AuthGuardService implements CanLoad, CanActivate {
     console.log("URL"+url)
 
     if (!LOGGED_USER) {
-      if (url == 'login') {        
+      if (url == 'login' || url == 'eventos' || url == 'dashboard') {        
         return true;
       }
       this.router.navigate(['login']);
@@ -45,7 +45,7 @@ export class AuthGuardService implements CanLoad, CanActivate {
     console.log(LOGGED_USER);
 
     if (!LOGGED_USER) {
-      if (state.url.endsWith('login')){
+      if (state.url.endsWith('login') || state.url.endsWith('eventos') || state.url.endsWith('dashboard') ){
         return true;
       }
       this.router.navigate(['login']);

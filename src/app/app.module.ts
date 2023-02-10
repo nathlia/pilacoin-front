@@ -12,6 +12,7 @@ import { ErrorhandlerService } from './core/services/errorhandler.service';
 import { JwtinterceptorService } from './core/services/jwtinterceptor.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeModule } from './modules/home.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HomeModule } from './modules/home.module';
     AppRoutingModule,
     CoreRoutingModule,
     NgbModule,
+    NgxPaginationModule
     // HomeRoutingModule,
     // BrowserAnimationsModule,
     
