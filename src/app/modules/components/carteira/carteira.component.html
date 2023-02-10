@@ -2,13 +2,19 @@
 
     <div class="d-flex justify-content-between ">
         <div class="d-flex">
-            <img src="../../../../assets/img/star.png" width="64" height="64" />
+            <div *ngIf="minerando">
+                <div class="spin">
+                    <img src="../../../../assets/img/star.png" width="64" height="64" />
+                </div>
+            </div>
+            <div *ngIf="!minerando">
+                <img src="../../../../assets/img/star.png" width="64" height="64" />
+            </div>
             <div style="padding-left: 20px;">
                 <h1>Carteira</h1>
                 <h2 class="sub">Meus Pilacoins</h2>
             </div>
         </div>
-
         <div class="pilacoin-count-card">
             <div class="total">total</div>
             <h2 class="pilacoin-count">{{pilacoinCount}}</h2>

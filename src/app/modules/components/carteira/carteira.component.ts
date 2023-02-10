@@ -53,8 +53,6 @@ export class CarteiraComponent implements OnInit {
     this.pilacoins = null;
     this.getPilaCoins();
     console.log(this.pilacoinCount);
-    this.refreshCounter = true;
-    setTimeout(() => this.refreshCounter = false, 1000);
     const Toast = Swal.mixin({
       width: '100px',
       toast: true,

@@ -70,6 +70,10 @@
     --text: #9986b9;
 }
 
+.text-primary {
+    color: var(--primary) !important;
+}
+
 body {
     /* font-family: "Merriweather", serif; */
     font-family: 'Barlow', 'ja-jp', sans-serif;
@@ -398,9 +402,9 @@ select:-webkit-autofill:focus {
 }
 
 .swal2-icon.swal2-success [class^=swal2-success-line] {
-    background-color: #ff61ce !important;
+    background-color: #9061ff !important;
 }
 
 .swal2-icon.swal2-success .swal2-success-ring {
-    border: 0.25em solid rgb(255 147 247 / 30%) !important;
+    border: 0.25em solid rgba(212, 147, 255, 0.3) !important;
 }

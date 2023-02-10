@@ -16,7 +16,7 @@
 }
 
 #register:hover {
-    color: var(--accent);
+    color: #7700ff;
 }
 
 #register {
@@ -44,7 +44,7 @@ a {
 }
 
 .black {
-    background: #var(--background);
+    background: #121212;
     position: absolute;
     height: 825px;
     width: 1380px;
