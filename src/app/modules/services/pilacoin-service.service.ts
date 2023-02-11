@@ -15,6 +15,11 @@ export class PilacoinService {
     return this.http.get<any>(baseUrl);
   }
 
+  getAllColega(): Observable<any> {
+    return this.http.get(`${baseUrl}/pila-do-colega`);
+  }
+
+
   get(id: any): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);
   }
@@ -26,6 +31,4 @@ export class PilacoinService {
   validarCoin(): Observable<any> {
     return this.http.get(`${baseUrl}/pilacoin/validaPilaOutroUsuario`);
   }
-
-  
 }

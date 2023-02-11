@@ -1,1 +1,34 @@
-<p>eventos works!</p>
+<div class="container-fluid">
+    <div class="d-flex justify-content-between">
+        <div class="d-flex">
+            <img src="../../../../assets/img/blockchain.png" width="64" height="64" style="position: relative; bottom: 15px;" />
+            <div style="padding-left: 20px; ">
+                <h1>Eventos</h1>
+                <div>
+                    <h2 class="sub">Pilacoins do Colega</h2>
+                    <h5 class="sub">Validados por mim</h5>
+                </div>
+            </div>
+        </div>
+        <div class="pilacoin-count-card">
+            <div class="total">total</div>
+            <h2 class="pilacoin-count">{{pilacoinCount}}</h2>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between " style="flex-direction: row-reverse;">
+        <pagination-controls (pageChange)=" paginationConfig.currentPage = $event" [id]="paginationId"></pagination-controls>
+    </div>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let pilaCoin of pilacoins | paginate: paginationConfig">
+            <div class="card mt-4">
+                <div class="card-header">
+                    <img src="../../../../assets/img/star.png" width="20" height="20" /> Nonce: {{ pilaCoin.nonce }}
+                </div>
+                <div class="list-group list-group-flush">
+                    <h5 class="list-group-item overflow">Chave Criador: {{ pilaCoin.chaveCriador }}</h5>
+                    <h5 class="list-group-item">Status: {{ pilaCoin.status }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

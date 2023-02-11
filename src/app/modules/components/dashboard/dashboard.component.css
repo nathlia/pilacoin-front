@@ -44,3 +44,13 @@ a:visited {
     text-decoration: none;
     color: #FFFFFF;
 }
+
+h2 {
+    text-transform: uppercase;
+}
+
+.sub {
+    color: var(--primary);
+    font-weight: 100;
+    text-transform: uppercase;
+}
